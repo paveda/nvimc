@@ -5,6 +5,7 @@ if impatient_ok then impatient.enable_profile() end
 local sources = {
   "plugins",
   "bootstrap",
+  "lsp"
 }
 
 for _, src in ipairs(sources) do
