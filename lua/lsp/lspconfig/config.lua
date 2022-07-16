@@ -1,5 +1,3 @@
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {
   noremap = true,
   silent = true,
@@ -26,9 +24,9 @@ for _, sign in ipairs(signs) do
 end
 
 local config = {
-  virtual_text = false, -- disable virtual text
+  virtual_text = false,
   signs = {
-    active = signs, -- show signs
+    active = signs,
   },
   update_in_insert = true,
   underline = true,

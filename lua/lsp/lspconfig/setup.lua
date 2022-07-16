@@ -1,12 +1,5 @@
 local status_ok, result = pcall(require, "lspconfig")
-
-if not status_ok then
-  local error = result
-  local error_message = "Error occured while require lspconfig"
-    .. "\n\n"
-    .. error.message
-  vim.api.nvim_err_writeln(error_message)
-end
+if not status_ok then return end
 
 local lspconfig = result
 
@@ -24,12 +17,13 @@ local servers = {
   "rust_analyzer",
   "pyright",
   "tsserver",
+  "solargraph"
 }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
+    lsp_flags = lsp_flags,
     capabilities = capabilities,
     on_attach = on_attach,
-    lsp_flags = lsp_flags,
   }
 end

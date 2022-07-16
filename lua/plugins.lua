@@ -1,5 +1,3 @@
-local utils = require "utils"
-
 return {
   -- Libs
   { "nvim-lua/plenary.nvim" },
@@ -10,30 +8,25 @@ return {
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- Completion
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-cmdline" },
+
   {
     "hrsh7th/nvim-cmp",
-    config = function() utils.load_config "config.cmp" end,
-    opt = true,
+    config = require "config.cmp",
   },
 
-  { "hrsh7th/cmp-nvim-lsp", opt = true },
-  { "hrsh7th/cmp-buffer", opt = true },
-  { "hrsh7th/cmp-path", opt = true },
-  { "hrsh7th/cmp-cmdline", opt = true },
-  {
-    "saadparwaiz1/cmp_luasnip",
-    require = "luasnip",
-    opt = true,
-  },
-  { "L3MON4D3/LuaSnip", opt = true },
+  { "L3MON4D3/LuaSnip" },
+  { "saadparwaiz1/cmp_luasnip" },
 
   -- UI
   { "folke/tokyonight.nvim" },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opt = true,
-    config = function() utils.load_config "config.tree_sitter" end,
+    config = require "config.tree_sitter",
   },
 
   {
@@ -42,17 +35,17 @@ return {
       "kyazdani42/nvim-web-devicons",
       opt = true,
     },
-    configt = function() utils.load_config "config.lualine" end,
+    configt = require "config.lualine",
   },
 
   {
     "folke/zen-mode.nvim",
-    config = function() utils.load_config "config.zen_mode" end,
+    config = require "config.zen_mode",
   },
 
   {
     "folke/twilight.nvim",
-    config = function() utils.load_config "config.twilight" end,
+    config = require "config.twilight",
   },
 
 }

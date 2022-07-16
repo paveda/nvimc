@@ -1,4 +1,7 @@
-return require("zen-mode").setup {
+local status_ok, zen_mode = pcall(require, "zen-mode")
+if not status_ok then return end
+
+zen_mode.setup {
   window = {
     backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
     -- height and width can be:
